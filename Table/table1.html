@@ -6,36 +6,147 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="1" cellspacing="0" align="center">
-        <tr align="center">
-            <th>Day</th>
-            <th>Subject</th>
-            <th>Start Time</th>
-            <th>End time</th>
-            <th>Room N0</th>
-        </tr>
-        <tr align="center">
-            <td rowspan="2">Monday</td>
-            <td>Mathematics</td>
-            <td>9:00 AM</td>
-            <td>10:00AM</td>
-            <td>101</td>
-        </tr>
-        <tr>
-            <td colspan="2">Physics</td>
-            <td>11:15AM</td>
-            <td>102</td>
-        </tr>
-        <tr>
-            <td rowspan="2">Tuesday</td>
-            <td>Chemistry</td>
-            <td>9:00AM</td>
-            <td>10:00AM</td>
-            <td>103</td>
-        </tr>
-        <tr>
-            <td colspan="3">Practical Lab</td>
-        </tr>
-    </table>
+    <div>
+        <ul>
+            <li><a href="#table1">Table1</a></li>
+            <li><a href="#table2">Table2</a></li>
+            <li><a href="#table3">Table3</a></li>
+        </ul>
+    </div>
+    <div>
+        <table border="1" cellspacing="0" align="center" width="50%" id="table1" style="margin-bottom: 300px">
+            <tr align="center">
+                <th>Day</th>
+                <th>Subject</th>
+                <th>Start Time</th>
+                <th>End time</th>
+                <th>Room N0</th>
+            </tr>
+            <tr align="center">
+                <td rowspan="2">Monday</td>
+                <td>Mathematics</td>
+                <td>9:00 AM</td>
+                <td>10:00AM</td>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td colspan="2">Physics</td>
+                <td>11:15AM</td>
+                <td>102</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Tuesday</td>
+                <td>Chemistry</td>
+                <td>9:00AM</td>
+                <td>10:00AM</td>
+                <td>103</td>
+            </tr>
+            <tr>
+                <td colspan="3">Practical Lab</td>
+            </tr>
+        </table>
+        <table border="1" cellspacing="0" align="center" width="50%" id="table2" style="margin-bottom: 300px">
+            <tr>
+                <td>Hours</td>
+                <td>1</td>
+                <td>2</td>
+                <td></td>
+                <td>3</td>
+                <td>4</td>
+                <td></td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>8:00-<br>8:30</td>
+                <td>8:30-<br>9:00</td>
+                <td>9:00-<br>9:30</td>
+                <td>9:30-<br>10:30</td>
+                <td>10:30-<br>12:00</td>
+                <td>12:00-1:00</td>
+                <td>1:00-<br>2:00</td>
+                <td>3:00<br>4:00</td>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td colspan="2">Lab</td>
+                <td rowspan="5" valign="top">Break</td>
+                <td>S1</td>
+                <td>S3</td>
+                <td rowspan="5" valign="top">Lunch<br>break</td>
+                <td>S3</td>
+                <td>S4</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>S4</td>
+                <td>S3</td>
+                <td>S2</td>
+                <td>S1</td>
+                <td colspan="2">lAB</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td colspan="2">LAB</td>
+                <td>S3</td>
+                <td>S2</td>
+                <td>S1</td>
+                <td>S4</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td colspan="2">Sports</td>
+                <td>S4</td>
+                <td>S1</td>
+                <td>S2</td>
+                <td>S3</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>S4</td>
+                <td>S3</td>
+                <td>S2</td>
+                <td>S1</td>
+                <td colspan="2">Clubs</td>
+            </tr>
+        </table>
+        <table border="1" cellspacing="0" width="50%" align="center" id="table3">
+            <tr>
+                <th>Formula Name</th>
+                <th>Equation</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Pythogorus Theorem</td>
+                <td>
+                    a<sup>2</sup> + b<sup>2</sup>=c<sup>2</sup>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Quadratic Formula</td>
+                <td>
+                    x=(-b&plusmn;&#8730;b<sup>2</sup> - <br>4ac)) /2a
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Newton's second Law</td>
+                <td>F=ma</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Area of the circle</td>
+                <td>A=&#8508;r<sup>2</sup></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Einstein's Mass-<br>Energy Equivalence</td>
+                <td>E=mc<sup>2</sup></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
