@@ -1,0 +1,27 @@
+.header{
+    background-color: #0057b7;
+    color: #fff;
+    height: 50px;
+}
+
+.header-heading{
+    padding-top: 13px;
+    padding-left: 75%;
+    font-size: 20px;
+    font-family: "Roboto";
+}
+
+.intoduction{
+    
+}
+
+.intro{
+    text-align: left;
+    background-color: #ffd700;
+    border-bottom-right-radius: 10px;
+    height: 40px;
+    font-size: 20px;
+    padding: 6px;
+    color: #fff;
+}
+
