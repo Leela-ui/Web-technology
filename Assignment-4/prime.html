@@ -2,6 +2,36 @@
 <html>
 <head>
   <title>Generate Prime Numbers</title>
+  <script>
+        function isPrime(num) {
+        if (num < 2) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+        }
+
+        function generatePrimes() {
+        const limit = document.getElementById("limit").value;
+        const outputDiv = document.getElementById("output");
+
+        if (!limit || limit <= 0) {
+            outputDiv.textContent = "Please enter a valid positive number.";
+            return;
+        }
+
+        let primes = [];
+        for (let i = 2; i <= limit; i++) {
+            if (isPrime(i)) {
+            primes.push(i);
+            }
+        }
+
+        outputDiv.textContent = primes.length > 0 
+            ? primes.join(", ") 
+            : "No prime numbers found in the given range.";
+        }
+  </script>
 </head>
 <body>
   <nav>
@@ -17,35 +47,6 @@
   <h3>Prime Numbers:</h3>
   <div id="output" style="white-space: pre-line;"></div>
 
-  <script>
-    function isPrime(num) {
-      if (num < 2) return false;
-      for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) return false;
-      }
-      return true;
-    }
-
-    function generatePrimes() {
-      const limit = document.getElementById("limit").value;
-      const outputDiv = document.getElementById("output");
-
-      if (!limit || limit <= 0) {
-        outputDiv.textContent = "Please enter a valid positive number.";
-        return;
-      }
-
-      let primes = [];
-      for (let i = 2; i <= limit; i++) {
-        if (isPrime(i)) {
-          primes.push(i);
-        }
-      }
-
-      outputDiv.textContent = primes.length > 0 
-        ? primes.join(", ") 
-        : "No prime numbers found in the given range.";
-    }
-  </script>
+  
 </body>
 </html>
