@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Group Identifier</title>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Assignment4.html">Back to home</a></li>
+        </ul>
+    </nav>
+    <h1>Enter Your Age</h1>
+    <input type="number" id="ageInput" placeholder="Enter age">
+    <button onclick="checkAgeGroup()">Check Age Group</button>
+    <p id="result"></p>
+
+    <script>
+        function checkAgeGroup() {
+            let age = document.getElementById("ageInput").value;
+            let group = "";
+            
+            if (age >= 0 && age <= 12) {
+                group = "Child";
+            } else if (age >= 13 && age <= 19) {
+                group = "Teenage";
+            } else if (age >= 20 && age <= 59) {
+                group = "Young";
+            } else if (age >= 60) {
+                group = "Senior Citizen";
+            } else {
+                group = "Invalid Age";
+            }
+            
+            document.getElementById("result").innerText = "Age Group: " + group;
+        }
+    </script>
+</body>
+</html>
