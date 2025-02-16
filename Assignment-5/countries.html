@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dropdowns (GitHub Gist JSON + XMLHttpRequest)</title>
+    <script>
+        let jsonData;
+		let url="https://gist.githubusercontent.com/rajeshyel/deca160052e8fcdb46835e2dfeac7be2/raw/2a7b8c886d2c1f305aca647f5d9caf9b8e148978/countries.json"
+        function loadData() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    jsonData = JSON.parse(xhr.responseText);
+                    populateCountries();
+                }
+            };
+            xhr.send();
+        }
+
+        function populateCountries() {
+            let countrySelect = document.getElementById("country");
+            for (let country in jsonData) {
+                let option = document.createElement("option");
+                option.value = country;
+                option.textContent = country;
+                countrySelect.appendChild(option);
+            }
+        }
+
+        function updateDistricts() {
+            let countrySelect = document.getElementById("country");
+            let districtSelect = document.getElementById("district");
+            let citySelect = document.getElementById("city");
+
+            districtSelect.innerHTML = '<option value="">Select District</option>';
+            citySelect.innerHTML = '<option value="">Select City</option>';
+            citySelect.disabled = true;
+
+            let selectedCountry = countrySelect.value;
+            if (selectedCountry) {
+                let districts = Object.keys(jsonData[selectedCountry]);
+                for (let i = 0; i < districts.length; i++) {
+                    let option = document.createElement("option");
+                    option.value = districts[i];
+                    option.textContent = districts[i];
+                    districtSelect.appendChild(option);
+                }
+                districtSelect.disabled = false;
+            } else {
+                districtSelect.disabled = true;
+            }
+        }
+
+        function updateCities() {
+            let countrySelect = document.getElementById("country");
+            let districtSelect = document.getElementById("district");
+            let citySelect = document.getElementById("city");
+
+            citySelect.innerHTML = '<option value="">Select City</option>';
+
+            let selectedCountry = countrySelect.value;
+            let selectedDistrict = districtSelect.value;
+
+            if (selectedDistrict) {
+                let cities = jsonData[selectedCountry][selectedDistrict];
+                for (let i = 0; i < cities.length; i++) {
+                    let option = document.createElement("option");
+                    option.value = cities[i];
+                    option.textContent = cities[i];
+                    citySelect.appendChild(option);
+                }
+                citySelect.disabled = false;
+            } else {
+                citySelect.disabled = true;
+            }
+        }
+    </script>
+</head>
+<body onload="loadData()">
+
+    <h2>Select Country, District, and City</h2>
+
+    <label for="country">Select Country:</label>
+    <select id="country" onchange="updateDistricts()">
+        <option value="">Select Country</option>
+    </select>
+
+    <label for="district">Select District:</label>
+    <select id="district" onchange="updateCities()" disabled>
+        <option value="">Select District</option>
+    </select>
+
+    <label for="city">Select City:</label>
+    <select id="city" disabled>
+        <option value="">Select City</option>
+    </select>
+
+</body>
+</html>
