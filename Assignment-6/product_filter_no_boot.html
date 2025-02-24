@@ -76,14 +76,23 @@
 
         function applyFilters() {
             var filteredProducts = [];
-            var category = document.getElementById('categoryFilter').value;
-            var minPrice = document.getElementById('minPrice').value;
-            var maxPrice = document.getElementById('maxPrice').value;
-
+            var category=document.getElementById('categoryFilter').value;
+            var minPrice = parseInt(document.getElementById('minPrice').value)||0;
+            var maxPrice = parseInt(document.getElementById('maxPrice').value)||Infinity;
+            
             //write your code here. You can access product information using variable "productsData"
+            for(let i=0;i<productsData.length;i++)
+        {
+           
+            if ( (productsData[i].category==category ||category=="")&& (productsData[i].price >= minPrice ) && (productsData[i].price <= maxPrice ))
+        {
+            filteredProducts.push(productsData[i]);
+        }
+        }
 
             displayProducts(filteredProducts);
         }
+
 
         function displayProducts(products) {
             var container = document.getElementById('productsContainer');
