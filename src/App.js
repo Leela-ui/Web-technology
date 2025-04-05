@@ -6,7 +6,7 @@ function App() {
     <div className="App">
         <h1>Welcome to the React JS Session</h1>
         <p>Class components</p>
-        
+
     </div>
   );
 }
